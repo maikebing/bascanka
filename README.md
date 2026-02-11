@@ -42,6 +42,14 @@ src/
   Bascanka.App/           # WinForms application, menus, localization
 ```
 
+## About the Name
+
+The name "Bascanka" comes from the Bascanska ploca (Baska tablet) - a stone tablet from around 1100 AD, found in the Church of St. Lucy near Baska on the island of Krk, Croatia. It is one of the oldest known inscriptions in the Croatian language, written in Glagolitic script. The tablet documents a royal land donation by King Zvonimir and is a cornerstone of Croatian cultural heritage and literacy.
+
+## Author
+
+Josip Habjan (habjan@gmail.com)
+
 ## License
 
 GNU GENERAL PUBLIC LICENSE Version 3
