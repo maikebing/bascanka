@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/jhabjan/bascanka/refs/heads/main/docs/resources/bascanka_small.png"
        alt="Bascanka screenshot"
-       width="26%">
+       width="35%">
 </p>
 
 **Bascanka** is a free and open-source large file text editor for Windows designed as a modern, lightweight alternative to traditional editors. It supports a wide range of programming and markup languages and is distributed under the GNU General Public License Version 3.
