@@ -34,12 +34,12 @@ Bascanka focuses on efficient resource usage and fast text processing while main
 - **Framework-dependent (small download - requires .NET 10 runtime)**  
   Single portable EXE (~2 MB). Use this if .NET 10 is already installed on your system.  
   👉 https://beegoesmoo.co.uk/bascanka/download/Bascanka.v.1.0.2.bin.zip  
-  **SHA256:** `8C736BB162E4F1D6491B44163D4E32175975ACDB75F12E0CC6FF790C1D5F02EC`
+  **SHA256:** `3DA65CD390AFEF9CFB7D2A3D937E622F40F8A59ED3476E2F868160B2DF95E24D`
 
 - **Self-contained (no runtime required)**  
   Single portable EXE with .NET 10 included (~120 MB). Works on any supported Windows machine without installing .NET.  
   👉 https://beegoesmoo.co.uk/bascanka/download/Bascanka.v.1.0.2.bin.sc.zip  
-  **SHA256:** `77C4A1873555EF02CA9CC8B1FF21D3D0DE5EC398FC678BD32BA8DFC164703010`
+  **SHA256:** `8DA8D58B3BA9F87F8F86080CC7132AC62AC1389E2C2EBF44403F27D9876517DB`
 
 All builds are portable - no installation required.
 

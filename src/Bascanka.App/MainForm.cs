@@ -1796,10 +1796,17 @@ public sealed class MainForm : Form
         int sourceIndex = e.Index;
         if (sourceIndex < 0 || sourceIndex >= _tabs.Count) return;
 
+        // Remove previously added compare items (tagged).
+        for (int i = menu.Items.Count - 1; i >= 0; i--)
+        {
+            if (menu.Items[i].Tag is string tag && tag == "compare")
+                menu.Items.RemoveAt(i);
+        }
+
         var sourceTab = _tabs[sourceIndex];
 
         // Build "Compare with..." submenu.
-        var compareMenu = new ToolStripMenuItem(Strings.CompareWithTab);
+        var compareMenu = new ToolStripMenuItem(Strings.CompareWithTab) { Tag = "compare" };
 
         // Add an entry for each other open tab.
         for (int i = 0; i < _tabs.Count; i++)
@@ -1825,7 +1832,7 @@ public sealed class MainForm : Form
         compareMenu.DropDownItems.Add(browseItem);
 
         // Insert before the last separator in the context menu (before Copy Path).
-        menu.Items.Add(new ToolStripSeparator());
+        menu.Items.Add(new ToolStripSeparator { Tag = "compare" });
         menu.Items.Add(compareMenu);
     }
 
