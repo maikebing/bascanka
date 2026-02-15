@@ -29,14 +29,17 @@ public sealed class ThemeManager
 
     private ThemeManager()
     {
-        // Register the two built-in themes and default to Dark.
+        // Register the two built-in themes and default to System.
         var dark = new DarkTheme();
         var light = new LightTheme();
+        var system= new SystemTheme();
         _themes[dark.Name] = dark;
         _themes[light.Name] = light;
+        _themes[system.Name] = system;
         _baseThemes[dark.Name] = dark;
         _baseThemes[light.Name] = light;
-        _currentTheme = dark;
+        _baseThemes[system.Name] = system;
+        _currentTheme = system;
     }
 
     // ── Public API ────────────────────────────────────────────────────
