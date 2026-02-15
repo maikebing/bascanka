@@ -109,9 +109,6 @@ public sealed class EncodingManager
     /// </summary>
     private static IReadOnlyList<System.Text.Encoding> BuildSupportedEncodings()
     {
-        // Register the code-pages provider so that Windows-1252, ISO-8859-1,
-        // and other legacy encodings are available on all platforms.
-        System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
         return new List<System.Text.Encoding>
         {

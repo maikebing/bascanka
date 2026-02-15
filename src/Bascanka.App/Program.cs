@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Bascanka.App;
 
@@ -13,6 +14,10 @@ static class Program
     [STAThread]
     static void Main(string[] args)
     {
+        // Register the code-pages provider so that Windows-1252, ISO-8859-1, GB2312,
+        // and other legacy encodings are available on all platforms.
+        System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
         // Enable high DPI support and visual styles.
         ApplicationConfiguration.Initialize();
 

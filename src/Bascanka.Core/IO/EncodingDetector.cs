@@ -153,6 +153,10 @@ public static class EncodingDetector
         if (IsValidUtf8(data))
             return new System.Text.UTF8Encoding(encoderShouldEmitUTF8Identifier: false); // UTF-8 without BOM
 
+        // Try to detect GB2312
+        if (IsLikelyGb2312(data))
+            return TextEncoding.GetEncoding("gb2312");
+
         // Fallback: Windows-1252 (Latin-1 superset, most common single-byte on Windows).
         return TextEncoding.GetEncoding(1252);
     }
@@ -208,5 +212,53 @@ public static class EncodingDetector
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Checks if the data is likely GB2312 encoded by validating byte sequences.
+    /// </summary>
+    private static bool IsLikelyGb2312(ReadOnlySpan<byte> data)
+    {
+        int i = 0;
+        int gb2312Pairs = 0;
+        int totalBytes = data.Length;
+        while (i < data.Length)
+        {
+            byte b = data[i];
+            if (b <= 0x7F)
+            {
+                // ASCII
+                i++;
+            }
+            else if (b >= 0xA1 && b <= 0xFE)
+            {
+                // Potential first byte of GB2312
+                if (i + 1 < data.Length)
+                {
+                    byte next = data[i + 1];
+                    if (next >= 0xA1 && next <= 0xFE)
+                    {
+                        gb2312Pairs++;
+                        i += 2;
+                    }
+                    else
+                    {
+                        // Invalid sequence, treat as single byte
+                        i++;
+                    }
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            else
+            {
+                // Invalid byte for GB2312
+                return false;
+            }
+        }
+        // If more than 30% of bytes are in valid GB2312 pairs, likely GB2312
+        return gb2312Pairs * 2 > totalBytes * 0.3;
     }
 }
