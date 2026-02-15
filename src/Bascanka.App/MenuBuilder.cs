@@ -449,6 +449,9 @@ public sealed class MenuBuilder
         _encodingMenu.DropDownItems.Add(MakeItem("ISO-8859-1", Keys.None,
             () => form.SetEncoding(System.Text.Encoding.GetEncoding("iso-8859-1"), false)));
 
+        _encodingMenu.DropDownItems.Add(MakeItem("Chinese Simplified (GB2312)", Keys.None,
+            () => form.SetEncoding(System.Text.Encoding.GetEncoding("GB2312"), false)));
+
         _encodingMenu.DropDownItems.Add(new ToolStripSeparator());
 
         // Line endings submenu.
@@ -510,6 +513,7 @@ public sealed class MenuBuilder
             "US-ASCII" => "ASCII",
             "WINDOWS-1252" => "Windows-1252",
             "ISO-8859-1" => "ISO-8859-1",
+            "GB2312" => "Chinese Simplified (GB2312)",
             _ => enc.CurrentEncoding.EncodingName,
         };
     }
