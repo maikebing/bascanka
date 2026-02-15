@@ -147,7 +147,7 @@ src/
   Bascanka.Core/          # Text buffer (piece table), search engine, commands
   Bascanka.Editor/        # Editor controls, gutter, tabs, panels, themes
   Bascanka.Plugins.Api/   # Plugin interfaces
-  Bascanka.App/           # WinForms application, menus, localization
+  Bascanka.App/           # Application, menus, localization
 ```
 
 ## About the Name
