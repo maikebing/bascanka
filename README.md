@@ -68,7 +68,7 @@ All builds are portable - no installation required.
 #### Syntax highlighting
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/jhabjan/bascanka/refs/heads/main/docs/resources/screen_main.png" target="_blank">
+  <a href="https://raw.githubusercontent.com/jhabjan/bascanka/refs/heads/main/docs/resources/screen_js.png" target="_blank">
     <img src="https://raw.githubusercontent.com/jhabjan/bascanka/refs/heads/main/docs/resources/screen_js.png"
          width="100%">
   </a>
